@@ -21,7 +21,7 @@ host    all             all             10.0.0.0/8              md5
 host    all             all             192.168.0.0/16          md5
 EOF
 
-    cat << EOF | su-exec postgres postgres --single postgres
+    cat << EOF | su-exec app postgres --single postgres
 CREATE DATABASE app ENCODING 'UTF8';
 ALTER USER app WITH PASSWORD '$PGPASS';
 EOF
